@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.454tangwenbin.com/"/>
-  <updated>2017-07-15T12:05:10.456Z</updated>
+  <updated>2017-07-16T02:25:27.289Z</updated>
   <id>http://www.454tangwenbin.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.454tangwenbin.com/2017/07/15/%E8%A7%A3%E5%86%B3hexo%E9%83%A8%E7%BD%B2%E6%97%B6%E5%87%BA%E7%8E%B0error-deployer-not-found-git%E9%97%AE%E9%A2%98/"/>
     <id>http://www.454tangwenbin.com/2017/07/15/解决hexo部署时出现error-deployer-not-found-git问题/</id>
     <published>2017-07-15T11:51:54.000Z</published>
-    <updated>2017-07-15T12:05:10.456Z</updated>
+    <updated>2017-07-16T02:25:27.289Z</updated>
     
     <content type="html"><![CDATA[<p>hexo搭建博客，运行:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
@@ -28,7 +28,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
 <p>后，重运行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-<p>即可解决问题</p>
+<p>即可解决问题。</p>
 ]]></content>
     
     <summary type="html">
