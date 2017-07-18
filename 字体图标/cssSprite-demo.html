@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>demo - CSS Sprite</title>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .sprite{
+            margin: 10px auto;
+            width: 206px;
+            border: 1px solid #b51600;
+        }
+        .sprite li{
+            cursor: pointer;
+            height: 42px;
+            width: 206px;
+            background-color: #b51600;
+            border-bottom: 1px solid #911001;
+            border-top: 1px solid #c11e08;
+        }
+        .sprite li a {
+            color: #fff;
+            line-height: 42px;
+            font-size: 14px;
+        }
+
+        .sprite li s{
+            height: 40px;
+            width: 24px;
+            display: block;
+            margin-left: 10px;
+            margin-right: 8px;
+            float: left;
+            background-image: url("images/s-icon.png");
+        }
+
+        .sprite li:hover{
+            background-color: #fff;
+            border-color: #fff
+        }
+        .sprite li:hover a{
+            color: #b51600;
+        }
+    </style>
+</head>
+<body>
+    <!--sprite列表-->
+    <ul class="sprite">
+        <li><s></s><a>慕课网就是好1</a></li>
+        <li><s></s><a>慕课网就是好2</a></li>
+        <li><s></s><a>慕课网就是好3</a></li>
+        <li><s></s><a>慕课网就是好4</a></li>
+        <li><s></s><a>慕课网就是好5</a></li>
+        <li><s></s><a>慕课网就是好6</a></li>
+        <li><s></s><a>慕课网就是好7</a></li>
+        <li><s></s><a>慕课网就是好8</a></li>
+        <li><s></s><a>慕课网就是好9</a></li>
+        <li><s></s><a>慕课网就是好10</a></li>
+        <li><s></s><a>慕课网就是好11</a></li>
+    </ul>
+
+	<script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //获取图标高度
+            var $spriteLi = $(".sprite li"),
+                iconHeight = $spriteLi.find("s").height();
+
+            //遍历$spriteLi
+            $spriteLi.each(function () {
+                var $this = $(this),
+                    index = $this.index(),
+
+                    //设置当前li元素的background-position
+                    setBackgroundPosition = function (x, y) {
+                        $this.find("s").css("background-position", x + "px " + y + "px");
+                    };
+
+                //初始化每个li的background-position
+                setBackgroundPosition(0, - iconHeight * index); 
+
+                //处理hover事件
+                $this.hover(function () {
+                    setBackgroundPosition(- 24, - iconHeight * index); 
+                }, function () {
+                    setBackgroundPosition(0, - iconHeight * index); 
+                });
+            });
+        });
+    </script>
+</body>
+</html>

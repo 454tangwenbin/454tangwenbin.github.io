@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        .layout{
+            width: 750px;
+            height: 300px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-top: 0;
+            overflow: hidden;
+        }
+        .layout li{
+            width: 20%;
+            height: 150px;
+            line-height: 150px;
+            float: left;
+            text-align: center;
+        }
+        .layout li a{
+            background-color: #f4f4f4;
+            color: #888;
+            height: 150px;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            /* margin-left: -1px; */
+            display: block;
+        }
+        .layout li a:hover{
+            background-color: #fff;
+            color: red;
+        }
+
+        @font-face {
+            font-family: "imooc-icon";
+            src: url("./fonts/icomoon.eot"); /*IE9兼容模式*/ 
+            src: url("./fonts/icomoon.eot?#iefix") format("embedded-opentype"),
+                 url("./fonts/icomoon.woff") format("woff"),
+                 url("./fonts/icomoon.ttf") format("ttf"),
+                 url("./fonts/icomoon.svg") format("svg");
+            font-style: normal;
+            font-weight: normal;
+        }
+        .imooc-icon {
+            font-family: "imooc-icon";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 64px;
+            -webkit-font-smoothing: antialiased; /*抗锯齿*/
+            -moz-osx-font-smoothing: grayscale; /*抗锯齿*/
+        }
+    </style>
+</head>
+<body>
+	<ul class="layout">
+		<li><a href=""><i style="color: #efe0ce;" class="imooc-icon">&#xf048;</i></a></li>
+		<li><a href=""><i style="color: #ef7073;" class="imooc-icon">&#xf04d;</i></a></li>
+		<li><a href=""><i style="color: #78ade3;" class="imooc-icon">&#xe601;</i></a></li>
+		<li><a href=""><i style="color: #eae77f;" class="imooc-icon">&#xe605;</i></a></li>
+		<li><a href=""><i style="color: #3c3c3c;" class="imooc-icon">&#xe604;</i></a></li>
+		<li><a href=""><i style="font-size:30px;" class="imooc-icon">&#xe606;</i></a></li>
+		<li><a href=""><i style="font-size:60px;" class="imooc-icon">&#xe607;</i></a></li>
+		<li><a href=""><i style="font-size:90px;" class="imooc-icon">&#xe60a;</i></a></li>
+		<li><a href=""><i style="font-size:120px;" class="imooc-icon">&#xe60c;</i></a></li>
+		<li><a href=""><i style="font-size:148px;" class="imooc-icon">&#xe60b;</i></a></li>
+	</ul>
+</body>
+</html>
