@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Font CSS ++</title>
+        <style>
+            ul, li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .layout{
+                width: 750px;
+                height: 250px;
+                margin: 50px auto;
+                border: 1px solid #ccc;
+                border-top: 0;
+                overflow: hidden;
+            }
+            .layout li{
+                width: 250px;
+                height: 250px;
+                margin-left: -1px;
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                line-height: 250px;
+                float: left;
+                background-color: #f4f4f4;
+                text-align: center;
+            }
+
+            @font-face {
+                font-family: "imooc-icon";
+                src: url("./fonts/imooc.eot"); /*IE9兼容模式*/ 
+                src: url("./fonts/imooc.eot?#iefix") format("embedded-opentype"),
+                     url("./fonts/imooc.woff") format("woff"),
+                     url("./fonts/imooc.ttf") format("typetrue"),
+                     url("./fonts/imooc.svg") format("svg");
+                font-style: normal;
+                font-weight: normal;
+            }
+            .imooc-icon {
+                display: block;
+                color: #b13947;
+                font-family: "imooc-icon";
+                font-style: normal;
+                font-weight: normal;
+                font-size: 148px;
+                -webkit-font-smoothing: antialiased; /*抗锯齿*/
+                -moz-osx-font-smoothing: grayscale; /*抗锯齿*/
+            }
+
+            /*icon-like*/
+            .icon-like:before {
+                content: "\e603";
+            }
+            /*icon-spinner*/
+            .icon-spinner:before {
+                content: "\e600";
+            }
+            /*icon-heart*/
+            .icon-heart:before {
+                content: "\e601";
+            }
+            .icon-heart:after {
+                content: "\e602";
+            }
+
+            /*icon-like*/
+            .shadow {
+                color: #fff;
+                /*阴影*/
+                text-shadow: 5px 5px 0 #b13947, 10px 10px 0 rgba(0,0,0,0.15);
+            }
+
+            /*icon-spinner*/
+            .spinner {
+                /*旋转动画*/
+                animation: spinner 2s infinite linear;
+                -webkit-animation: spinner 2s infinite linear;
+            }
+            @keyframes spinner {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(359deg);
+                }
+            }
+            @-webkit-keyframes spinner {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(359deg);
+                }
+            }
+
+            /*icon-heart*/
+            .love {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+            }
+            .love:before {
+                position: absolute;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                color: #ea515e;
+                opacity: 0;
+                transform: scale(0);
+            }
+            .love.btn-heart:before {
+                /*缩放淡出动画*/
+                animation: scaleFade 0.5s forwards;
+                -moz-animation: scaleFade 0.5s forwards;
+                -webkit-animation: scaleFade 0.5s forwards;
+            }
+            @keyframes scaleFade {
+                50% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(2.5);
+                    opacity: 0;
+                }
+            }
+            @-moz-keyframes scaleFade {
+                50% {
+                    -moz-transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    -moz-transform: scale(2.5);
+                    opacity: 0;
+                }
+            }
+            @-webkit-keyframes scaleFade {
+                50% {
+                    -webkit-transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    -webkit-transform: scale(2.5);
+                    opacity: 0;
+                }
+            }
+            .love:after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                z-index: 0;
+                color: #cecece;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="layout">
+            <li><i class="imooc-icon icon-like shadow"></i></li>
+            <li><i class="imooc-icon icon-spinner spinner"></i></li>
+            <li><i class="imooc-icon icon-heart love"></i></li>
+        </ul>
+
+        <script src="js/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $(".love").click(function () {
+                    var $this = $(this);
+                    $this.addClass("btn-heart");
+                    setTimeout(function () {
+                        $this.removeClass("btn-heart");
+                    }, 500);
+                });
+            });
+        </script>
+    </body>
+</html>

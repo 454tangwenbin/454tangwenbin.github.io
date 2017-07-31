@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Font CSS</title>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        .layout{
+            width: 750px;
+            height: 300px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-top: 0;
+            overflow: hidden;
+        }
+        .layout li{
+            width: 20%;
+            height: 150px;
+            line-height: 150px;
+            float: left;
+            text-align: center;
+        }
+        .layout li a{
+            background-color: #f4f4f4;
+            color: #888;
+            height: 150px;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            /* margin-left: -1px; */
+            display: block;
+        }
+        .layout li a:hover{
+            background-color: #fff;
+            color: red;
+        }
+
+        @font-face {
+            font-family: "imooc-icon";
+            src: url("./fonts/icomoon.eot"); /*IE9兼容模式*/ 
+            src: url("./fonts/icomoon.eot?#iefix") format("embedded-opentype"),
+                 url("./fonts/icomoon.woff") format("woff"),
+                 url("./fonts/icomoon.ttf") format("typetrue"),
+                 url("./fonts/icomoon.svg") format("svg");
+            font-style: normal;
+            font-weight: normal;
+        }
+        .imooc-icon {
+            font-family: "imooc-icon";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 64px;
+            -webkit-font-smoothing: antialiased; /*抗锯齿*/
+            -moz-osx-font-smoothing: grayscale; /*抗锯齿*/
+        }
+        .icon-music:before {
+            content: "\e605";
+        }
+        .icon-film:before {
+            content: "\e606";
+        }
+        .icon-pacman:before {
+            content: "\e607";
+        }
+        .icon-feed:before {
+            content: "\e608";
+        }
+        .icon-file:before {
+            content: "\e609";
+        }
+        .icon-paste:before {
+            content: "\e60a";
+        }
+        .icon-folder:before {
+            content: "\e60b";
+        }
+        .icon-calculate:before {
+            content: "\e60c";
+        }
+    </style>
+</head>
+<body>
+	<ul class="layout">
+		<li><a href=""><i class="imooc-icon icon-music"></i></a></li>
+		<li><a href=""><i class="imooc-icon icon-film"></i></a></li>
+        <li><a href=""><i class="imooc-icon icon-pacman"></i></a></li>
+		<li><a href=""><i class="imooc-icon icon-feed"></i></a></li>
+		<li><a href=""><i class="imooc-icon icon-file"></i></a></li>
+		<li><a href=""><i class="imooc-icon icon-paste"></i></a></li>
+		<li><a href=""><i class="imooc-icon icon-folder"></i></a></li>
+		<li><a href=""><i class="imooc-icon icon-calculate"></i></a></li>
+		<li><a href=""><i class="imooc-icon icon-calculate"></i></a></li>
+		<li><a href=""><i class="imooc-icon icon-calculate"></i></a></li>
+	</ul>
+</body>
+</html>
