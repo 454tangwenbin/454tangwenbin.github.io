@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+        结构性伪类选择器
+
+        |选择器|说明|
+        |E:nth-of-type|匹配一个父元素中的同类型第n个子元素|
+        |E:nth-last-of-type|匹配一个父元素中同类型的最后第n个子元素|
+        |E:nth-child(an+b)|匹配一个父元素中的第an+b个子元素|
+        |E:only-child|匹配一个父元素中的只有一个子元素|
+        |E:only-of-type|匹配一个父元素中的只有一个同类型子元素|
+
+        与用户界面有关的伪类
+        |选择器|说明|
+        |E:enabled|匹配表单中激活的元素|
+        |E:disabled|匹配表单中禁用的元素|
+        |E:checked|匹配表单中被选中的元素|
+        |E::selection|匹配用户当前选中的元素|
+         */
+        p:nth-of-type(4) {
+            background: red;
+        }
+        p:nth-last-of-type(2) {
+            background: yellow;
+        }
+        p:nth-child(3n+2) {
+            background: green;
+        }
+        p:only-child {
+            background: #f0f;
+        }
+        input:enabled {
+            background: green;
+        }
+        input:disabled {
+            background: red;
+        }
+        /*经测试无作用*/
+        input:checked {
+            border: 1px solid #555;
+        }
+        ::selection {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>aaaaaaa</p>
+    </div>
+    <div>
+        <p>aaaaaaa</p>
+        <p>aaaaaaa</p>
+        <p>aaaaaaa</p>
+        <div>bbbbbbb</div>
+        <div>bbbbbbb</div>
+        <div>bbbbbbb</div>
+        <div>bbbbbbb</div>
+        <p>ccccccc</p>
+    </div>
+    <div>
+        <p>aaaaaaa</p>
+        <p>aaaaaaa</p>
+        <p>aaaaaaa</p>
+        <div>bbbbbbb</div>
+        <p>ccccccc</p>
+    </div>
+    <form>
+        <input type="text" name="aaa" /><br />
+        <input type="text" name="aaa" disabled /><br />
+        <input type="text" name="aaa" /><br />
+        <input type="text" name="aaa" /><br />
+        <input type="radio" name="a" />aaa<br />
+        <input type="radio" checked name="a" />bbb<br />
+    </form>
+</body>

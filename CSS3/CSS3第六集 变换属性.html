@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+        变换属性
+        |属性|说明|
+        |tranform|变换|
+         */
+
+    h1 {
+        clear: both;
+        padding-top: 10px;
+        font-size: 16px;
+        font-family: Arail;
+    }
+    ul {
+        list-style: none;
+        width: 700px;
+        margin: 0;
+        padding: 0;
+        zoom: 1;
+    }
+    li {
+        float: left;
+        margin: 20px 30px 0 0;
+        border: 1px solid #000;
+    }
+    p {
+        width: 300px;
+        height: 100px;
+        margin: 0;
+        background: #ddd;
+    }
+
+    .matrix {
+        -webkit-transform: matrix(0,1,1,1,10,10);
+        -moz-transform: matrix(0,1,1,1,10,10);
+        -o-transform: matrix(0,1,1,1,10,10);
+        -ms-transform: matrix(0,1,1,1,10,10);
+        transform: matrix(0,1,1,1,10,10);
+    }
+    .translate {
+        -webkit-transform: translate(5%,10px);
+        -moz-transform: translate(5%,10px);
+        -o-transform: translate(5%,10px);
+        -ms-transform: translate(5%,10px);
+        transform: translate(5%,10px);
+    }
+    .translate2 {
+        -webkit-transform: translate(-10px,-10px);
+        -moz-transform: translate(-10px,-10px);
+        -o-transform: translate(-10px,-10px);
+        -ms-transform: translate(-10px,-10px);
+        transform: translate(-10px,-10px);
+    }
+    .translateX {
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        -o-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    .translate3 {
+        -webkit-transform: translate(20px);
+        -moz-transform: translate(20px);
+        -o-transform: translate(20px);
+        -ms-transform: translate(20px);
+        transform: translate(20px);
+    }
+    .translateY {
+        -webkit-transform: translateY(20px);
+        -moz-transform: translateY(20px);
+        -o-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    .translate4 {
+        -webkit-transform: translate(0,10px);
+        -moz-transform: translate(0,10px);
+        -o-transform: translate(0,10px);
+        -ms-transform: translate(0,10px);
+        transform: translate(0,10px);
+    }
+    .rotate {
+        -webkit-transform: rotate(-5deg);
+        -moz-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    .rotate2 {
+        -webkit-transform: rotate(5deg);
+        -moz-transform: rotate(5deg);
+        -o-transform: rotate(5deg);
+        -ms-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+    .scale {
+        -webkit-transform: scale(.8);
+        -moz-transform: scale(.8);
+        -o-transform: scale(.8);
+        -ms-transform: scale(.8);
+        transform: scale(.8);
+    }
+    .scale2 {
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    .skew {
+        -webkit-transform: skew(-5deg);
+        -moz-transform: skew(-5deg);
+        -o-transform: skew(-5deg);
+        -ms-transform: skew(-5deg);
+        transform: skew(-5deg);
+    }
+    .skew2 {
+        -webkit-transform: skew(-5deg, -5deg);
+        -moz-transform: skew(-5deg, -5deg);
+        -o-transform: skew(-5deg, -5deg);
+        -ms-transform: skew(-5deg, -5deg);
+        transform: skew(-5deg, -5deg);
+    }
+    </style>
+</head>
+<body>
+    <h1>矩阵变换：matrix</h1>
+    <ul>
+        <li>
+            <p class="matrix">matrix(0,1,1,1,10,10)</p>
+        </li>
+    </ul>
+    <h1>平移：translate</h1>
+    <ul>
+        <li>
+            <p class="translate">translate(5%,10px)</p>
+        </li>
+        <li>
+            <p class="translate2">translate(-10px,-10px)</p>
+        </li>
+        <li>
+            <p class="translateX">translateX(20px)</p>
+        </li>
+        <li>
+            <p class="translate3">translate(20px)</p>
+        </li>
+        <li>
+            <p class="translateY">translateY(20px)</p>
+        </li>
+        <li>
+            <p class="translate4">translate(0,10px)</p>
+        </li>
+    </ul>
+    <h1>旋转：rotate</h1>
+    <ul>
+        <li>
+            <p class="rotate">rotate(-5deg)</p>
+        </li>
+        <li>
+            <p class="rotate2">rotate(5deg)</p>
+        </li>
+    </ul>
+    <h1>缩放：scale</h1>
+    <ul>
+        <li>
+            <p class="scale">scale(.8)</p>
+        </li>
+        <li>
+            <p class="scale2">scale(1.2)</p>
+        </li>
+    </ul>
+    <h1>扭曲：skew</h1>
+    <ul>
+        <li>
+            <p class="skew">skew(-5deg)</p>
+        </li>
+        <li>
+            <p class="skew2">skew(-5deg,-5deg)</p>
+        </li>
+    </ul>
+
+</body>

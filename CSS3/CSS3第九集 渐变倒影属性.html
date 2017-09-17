@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+        渐变倒影属性
+        |属性|说明|
+        |linear-gradient|线性颜色渐变|
+        |radial-gradient|径向颜色渐变|
+        |box-reflect|倒影|
+         */
+
+        .linear1 {
+            width: 300px;
+            height: 200px;
+            background: -webkit-linear-gradient(top,red,blue);
+            background: -moz-linear-gradient(top,red,blue);
+        }
+        .linear2 {
+            width: 300px;
+            height: 200px;
+            background: -webkit-linear-gradient(top,red 50%,green 75%,blue 100%);
+            background: -moz-linear-gradient(top,red 50%,green 75%,blue 100%);
+        }
+        .linear3 {
+            width: 300px;
+            height: 200px;
+            background: -webkit-linear-gradient(-45deg,red 50%,green 75%,blue 100%);
+            background: -moz-linear-gradient(-45deg,red 50%,green 75%,blue 100%);
+        }
+        .linear4 {
+            height: 200px;
+            background: -webkit-linear-gradient(top,red,orange,yellow,green,cyan,blue,purple);
+            background: -moz-linear-gradient(-45deg,red 50%,green 75%,blue 100%);
+        }
+        .radial1 {
+            width: 300px;
+            height: 200px;
+            background: -webkit-radial-gradient(center center,red,blue);
+            background: -moz-radial-gradient(center center,red,blue);
+        }
+        .radial2 {
+            width: 300px;
+            height: 200px;
+            background: -webkit-radial-gradient(center center,red 25%,green 50%,blue 100%);
+            background: -moz-radial-gradient(center center,red 25%,green 50%,blue 100%);
+        }
+        .radial3 {
+            width: 300px;
+            height: 200px;
+            background: -webkit-radial-gradient(20px 70px,red 25%,green 50%,blue 100%);
+            background: -moz-radial-gradient(20px 70px,red 25%,green 50%,blue 100%);
+        }
+        .radial4 {
+            width: 300px;
+            height: 200px;
+            background: -webkit-radial-gradient(center center,circle,red,blue);
+            background: -moz-radial-gradient(center center,circle,red,blue);
+        }
+        .repeat-linear {
+            width: 300px;
+            height: 200px;
+            background: -webkit-repeating-linear-gradient(top,red,green,red 10%);
+            background: -moz-repeating-linear-gradient(top,red,green);
+        }
+        .repeat-radial {
+            width: 300px;
+            height: 200px;
+            background: -webkit-repeating-radial-gradient(center center,circle,red,green,red 10%);
+            background: -moz-repeating-radial-gradient(center center,circle,red,green);
+        }
+        .white {
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            box-shadow: -5px 5px 15px #000;
+            background: -webkit-radial-gradient(140px 60px,#fff,#666);
+        }
+        p {
+            font-size: 36px;
+            -webkit-box-reflect: below -10px -webkit-linear-gradient(top,transparent 20%,#fff);
+            -moz-box-reflect: below -10px -moz-linear-gradient(top,transparent 20%,#fff);
+        }
+    </style>
+</head>
+<body>
+    <div class="linear1"></div><hr />
+    <div class="linear2"></div><hr />
+    <div class="linear3"></div><hr />
+    <div class="linear4"></div><hr />
+    <div class="radial1"></div><hr />
+    <div class="radial2"></div><hr />
+    <div class="radial3"></div><hr />
+    <div class="radial4"></div><hr />
+    <div class="repeat-linear"></div><hr />
+    <div class="repeat-radial"></div><hr />
+    <div class="white"></div><hr />
+    <p>aaaaa;bbbbb;ccccc;ddddd</p>
+</body>

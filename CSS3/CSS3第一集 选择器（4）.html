@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+        结构性伪类选择器
+
+        
+        |选择器|说明|
+        |E:first-child|一个父元素中的第一个子元素|
+        |E:last-child|一个父元素中的最后一个子元素|
+        |E:nth-child|一个父元素中的第n个子元素|
+        |E:nth-last-child|一个父元素中的最后第n个子元素|
+         */
+        li:nth-child(4) {
+            background: yellow;
+        }
+        li:nth-last-child(odd) {
+            background: #f0f;
+        }
+        li:first-child {
+            background: red;
+        }
+        li:last-child {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1aaaaaaaaaaaa</li>
+        <li>2aaaaaaaaaaaa</li>
+        <li>3aaaaaaaaaaaa</li>
+        <li>4aaaaaaaaaaaa</li>
+        <li>5aaaaaaaaaaaa</li>
+        <li>6aaaaaaaaaaaa</li>
+        <li>7aaaaaaaaaaaa</li>
+        <li>8aaaaaaaaaaaa</li>
+        <li>9aaaaaaaaaaaa</li>
+        <li>10aaaaaaaaaaa</li>
+        <li>11aaaaaaaaaaa</li>
+        <li>12aaaaaaaaaaa</li>
+    </ul>
+    <ul>
+        <li>1aaaaaaaaaaaa</li>
+        <li>2aaaaaaaaaaaa</li>
+        <li>3aaaaaaaaaaaa</li>
+        <li>4aaaaaaaaaaaa</li>
+        <li>5aaaaaaaaaaaa</li>
+        <li>6aaaaaaaaaaaa</li>
+        <li>7aaaaaaaaaaaa</li>
+        <li>8aaaaaaaaaaaa</li>
+        <li>9aaaaaaaaaaaa</li>
+        <li>10aaaaaaaaaaa</li>
+        <li>11aaaaaaaaaaa</li>
+        <li>12aaaaaaaaaaa</li>
+    </ul>
+    <ul>
+        <li>1aaaaaaaaaaaa</li>
+        <li>2aaaaaaaaaaaa</li>
+        <li>3aaaaaaaaaaaa</li>
+        <li>4aaaaaaaaaaaa</li>
+        <li>5aaaaaaaaaaaa</li>
+        <li>6aaaaaaaaaaaa</li>
+        <li>7aaaaaaaaaaaa</li>
+        <li>8aaaaaaaaaaaa</li>
+        <li>9aaaaaaaaaaaa</li>
+        <li>10aaaaaaaaaaa</li>
+        <li>11aaaaaaaaaaa</li>
+        <li>12aaaaaaaaaaa</li>
+    </ul>
+</body>

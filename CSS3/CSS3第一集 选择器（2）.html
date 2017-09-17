@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+        属性选择器
+        
+        |选择器|说明|
+        |E[att]|匹配所有具有att属性的E元素，不考虑它的值，E可省略，以下同|
+        |E[att=val]|匹配所有att属性等于val的E元素|
+        |E[att~val]|匹配所有att属性具有多个空格分隔的值，其中一个等于val的E元素|
+        |E[att|=val]|匹配所有att属性具有多个连字号分隔的值，其中一个值以val-开头的E元素|
+        |E[att^=val]|匹配属性att的值以val开头的E元素|
+        |E[att$=val]|匹配属性att的值以val结尾的E元素|
+        |E[att*=val]|匹配属性att的值包含val字符串的E元素|
+         */
+        [title] {
+            color: red;
+            font-size: 3cm;
+        }
+        div[align=center] {
+            color: blue;
+            font-size: 4cm;
+        }
+        p[title~=is] {
+            color: green;
+            font-size: 1cm;
+        }
+        p[title|=is] {
+            color: yellow;
+        }
+        a[href^=http] {
+            color: #f0f;
+            font-size: 3cm;
+        }
+        a[href$=png] {
+            color: red;
+        }
+        a[href*=tt] {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    属性选择器
+    <p title="this is a test">this is a test</p>
+    <p>aaaaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaaaa</p>
+    <div align="center">bbbbbb</div>
+    <div align="right">bbbbbb</div>
+    <a href="http://www.baidu.com">baidu</a>
+    <a href="www.baidu.com/demo.png">baidu</a>
+    <a href="http://www.baidu.com">baidu</a>
+    <h2 lang="zh-en">hello</h2>
+</body>

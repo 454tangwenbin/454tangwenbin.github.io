@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+        结构性伪类选择器
+
+        四个最基本的结构性伪类选择器
+        |选择器|说明|
+        |E:root|将样式绑定到页面的根元素|
+        |E:not|排除某个结构元素下的子结构元素|
+        |E:empty|元素内容为空的E元素|
+        |E:target|某个target元素，一般用于a元素|
+         */
+        :root {
+            background: #aaa;
+        }
+        p:first-line {
+            color: red;
+            font-size: 1cm;
+        }
+        p:first-letter {
+            font-size: 3cm;
+        }
+        p:before {
+            content: "This is a test: ";
+        }
+        p:after {
+            content: "This is a test!";
+        }
+        li:not(.two) {
+            color: red;
+        }
+        li:empty {
+            display: none;
+        }
+        :target {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        aaaaaaaaaaaaaa<br />
+        bbbbbbbbbbbbbb<br />
+        cccccccccccccc<br />
+    </p>
+    <a href="#three">three</a>
+    <ul>
+        <li>aaaaaaaaaa</li>
+        <li class="two">aaaaaaaaaa</li>
+        <li></li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+    </ul>
+    <a id="three">#####################</a>
+</body>

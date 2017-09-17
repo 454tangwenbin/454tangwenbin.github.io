@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+        多元素的组合选择器
+
+        |选择器|说明|
+        |E, F|多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号间隔|
+        |E F|后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格间隔|
+        |E > F|子元素选择器，匹配所有E元素的子元素F（第一层后代）|
+        |E + F|毗邻兄弟元素选择器，匹配所有紧随E元素之后的同级元素F|
+        |E ~ F|同级元素通用选择器，匹配任何在E元素之后的同级F元素|
+         */
+        p, div, h1 {
+            font-size: 1cm;
+            color: red;
+        }
+        div p {
+            font-size: 1cm;
+            color: blue;
+        }
+        #one > p {
+            font-size: 4cm;
+            color: blue;
+        }
+        div + p {
+            font-size: 1cm;
+            color: green;
+        }
+        div ~ p {
+            font-size: 1cm;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <h1>
+            <p>This is a test!</p>
+        </h1>
+    </div>
+    <div>hello world!</div>
+    <p>aaaaaaa</p>
+    <h1>ddddddddd</h1>
+    <p>mmmmmmmmmmmm</p>
+</body>

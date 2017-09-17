@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+        过渡属性
+        |属性|说明|
+        |transition|过渡: linear, 匀速；ease, 平滑；ease-out, 由快到慢；ease-in, 由慢到快；ease-in-out, 由慢到快到慢；cubic-bezier(n,n,n,n), 自定义|
+         */
+
+        a.one {
+            -webkit-transition: padding 1s linear, background 1s ease-in 1s;
+            -moz-transition: padding 1s linear, background 1s ease-in 1s;
+            -o-transition: padding 1s linear, background 1s ease-in 1s;
+            -ms-transition: padding 1s linear, background 1s ease-in 1s;
+            transition: padding 1s linear, background 1s ease-in 1s;
+        }
+        a.one:hover {
+            padding-left: 50px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <a class="one" href="###">This is a test!</a>
+    <a class="two" href="###">This is a test!</a>
+    <a class="three" href="###">This is a test!</a>
+    <a class="four" href="###">This is a test!</a>
+</body>

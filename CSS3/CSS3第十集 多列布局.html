@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+        多列布局
+        |属性|说明|
+        |columns|多列布局|
+        |column-gap|多列空隙|
+        |column-rule|多列分隔线|
+         */
+
+        body {
+            -webkit-columns: 250px 3;
+            -moz-columns: 250px 3;
+            columns: 250px 3;
+            -webkit-column-gap: 30px;
+            -moz-column-gap: 30px;
+            column-gap: 30px;
+            -webkit-column-rule: 3px dashed #000;
+            -moz-column-rule: 3px dashed #000;
+            column-rule: 3px dashed #000;
+        }
+        p {
+            text-indent: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3</h1>
+    <p>CSS即层叠样式表（Cascading StyleSheet）。 在网页制作时采用层叠样式表技术，可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。CSS3是CSS技术的升级版本，CSS3语言开发是朝着模块化发展的。以前的规范作为一个模块实在是太庞大而且比较复杂，所以，把它分解为一些小的模块，更多新的模块也被加入进来。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。</p>
+    <h2>布局编辑</h2>
+    <p>CSS3-Gird布局格式CSS3-Gird布局格式(2张) Grid布局图中[1]  蓝色的线不会出现在实际的网页中。Grid布局应用很广泛，最简单的例子就是内容的分栏显示。对于右边这个布局复杂的三栏网页来说，如果使用CSS3Grid布局的话，我们只需这样写：body{columns:3;column-gap:0.5in;} img{float:pagetopright;width:3gr;}其中，body部分声明页面为3栏，栏间距为0.5英寸；img中float属性指明图片浮动位置为页面的右上角，而宽度为3个栏宽。只需这样两行CSS，就可以实现这个复杂布局。</p>
+    <h2>Flexbox编辑</h2>
+    <p>Flexbox(伸缩布局盒) 是 CSS3 中一个新的布局模式，为了现代网络中更为flexbox flexbox复杂的网页需求而设计。Flexbox 由 伸缩容器 和 伸缩项目 组成。通过设置元素的 display 属性为 flex 或 inline-flex 可以得到一个伸缩容器。设置为 flex 的容器被渲染为一个块级元素，而设置为 inline-flex 的容器则渲染为一个行内元素。Flexbox通常能让我们更好的操作他的子元素布局，例如：如果元素容器没有足够的空间，我们无需计算每个元素的宽度，就可以设置他们在同一行；可以快速让他们布局在一列；可以方便让他们对齐容器的左、右、中间等；无需修改结构就可以改变他们的显示顺序；如果元素容器设置百分比和视窗大小改变，不用担心未指定元素的确切宽度而破坏布局，因为容器中的每个子元素都可以自动分配容器的宽度或高度的比例。[2] </p>
+    <h2>生成工具编辑</h2>
+    <p>CSS3 Maker CSS3(图4) CSS3(图4)这款工具非常强大，可在线演示渐变、阴影、旋转、动画等非常多的效果，并生成对应效果的代码，CSS3 Generator非常不错的各种 CSS3 代码生成器，支持圆角、渐变、旋转和阴影等众多特性，带预览效果。CSS3 Please帅且酷的一款 CSS3 工具，可即时在线修改代码并预览效果，还有详细的浏览器兼容情况。</p>
+    <h2>特性编辑</h2>
+    <p>1、CSS3圆角表格CSS3圆角表格圆角表格，对应属性：border-radius。2、以往对网页上的文字加特效只能用filter这个属性，这次CSS3中专门制订了一个加文字特效的属性，而且不止加阴影这种效果。对应属性：font-effect。3、丰富了对链接下划线的样式，以往的下划线都是直线，这次可不一样了，有波浪线、点线、虚线等等，更可对下划线的颜色和位置进行任意改变。（还有对应顶线和中横线的样式，效果与下划线类似）对应属性：text-underline-style，text-underline-color，text-underline-mode，text-underline-position。4、在文字下点几个点或打个圈以示重点，CSS3也开始加入了这项功能，这应该在某些特定网页上很有用。对应属性：font-emphasize-style和font-emphasize-position。边框border-color:控制边框颜色，并且有了更大的灵活性，可以产生渐变效果border-color:<color> /*其中可以上一个值，也可以是多个值，具体我在这里不多说了，大家来时用到的也特别多*/</p>
+    <h2>CSS3边框</h2>
+    <p>border-top-color:<color>/*给上边框上色*/ border-right-color:<color>/*给右边框上色*/ border-bottom-color:<color>/*给下边框上色*/ border-left-color:<color>/*给左框上色*/ border-image:控制边框图像border-corner-image:控制边框边角的图像border-radius:能产生类似圆角矩形的效果背景background-origin:决定了背景在盒模型中的初始位置，提供了3个值，border, padding和content border:控制背景起始于左上角的边框</p>
+    <h2>CSS3背景</h2>
+    <p>CSS3背景padding:控制背景起始于左上角的留白content:控制背景起始于左上角的内容background-clip:决定边框是否覆盖住背景（默认是不覆盖），提供了两个值，border和padding border:会覆盖住背景padding:不会覆盖背景background-size:可以指定背景大小，以象素或百分比显示。当指定为百分比时，大小会由所在区域的宽度、高度，以及background-origin的位置决定
+multiple backgrounds:多重背景图像，可以把不同背景图像只放到一个块元素里。</p>
+    <h2>文字效果</h2>
+    <p>text-shadow:文字投影，可能是因为MAC OSX的Safari浏CSS3文字效果CSS3文字效果览器开始支持投影才特意增加的。text -overflow:当文字溢出时，用“…”提示。包括ellipsis、clip、ellipsis-word、inherit，前两个CSS2就有了，还是部分支持，但有趣的是IE6居然也支持。ellipsis-word可以省略掉最后一个单词，对中文意义不大，inherit可以继承父级元素。颜色CSS3联系表单 背景透明迷人CSS3联系表单 背景透明迷人HSL colors:除了支持RGB颜色外，还支持HSL（色相、饱和度、亮度）。以前一般都是作图的时候用HSL色谱，但这样一来会包括更多的颜色。H用度表示，S和L用百分比表示，比如hsl（0,100%, 50%）HSLA colors:加了个不透明度（Apacity），用0到1之间的数来表示，比如hsla（0,100%,50%,0.2）opacity:直接控制不透明度，用0到1之间的数来表示RGBA colors:和HSLA colors类似，加了个不透明度。一直以来，浏览器的透明一直无法实现单纯的颜色透明，每次使用alpha后就会把透明的属性继承到子节点上。换句话说，很难实现背景颜色透明而文字不透明的效果。直到RGBA颜色的出现这一切将成为现实。实现这样的效果非常简单，设置颜色的时候我们使用标准的rgba（）单位即可，例如rgba（255,0,0,0.4）这样就出现了一个红色同时拥有alpha透明为0.4的颜色。经过测试firefox3.0、safari3.2、opera10都支持了rgba单位。<p>
+    <h2>动画属性</h2>
+    <p>变形(transform)、转换(transition)和动画(animation) transform: rotate | scale | skew | translate |matrix;旋转rotate、扭曲skew、缩放scale和移动translate以及矩阵变形matrix。transition主要包含四个属性值：执行变换的属性：transition-property,变换延续的时间：transition-duration,在延续时间段，变换的速率变化transition-timing-function,变换延迟时间transition-delay。下面分别来看这四个属性值在开始介绍Animation之前我们有必要先来了解一个特殊的东西，那就是"Keyframes",我们把他叫做“关键帧”，玩过flash的朋友可能对这个东西并不会陌生。下面我们就一起来看看这个“Keyframes”是什么东西。前面我们在使用transition制作一个简单的transition效果时，我们包括了初始属性和最终属性，一个开始执行动作时间和一个延续动作时间以及动作的变换速率，其实这些值都是一个中间值，如果我们要控制的更细一些，比如说我要第一个时间段执行什么动作，第二个时间段执行什么动作（换到flash中说，就是第一帧我要执行什么动作，第二帧我要执行什么动作），这样我们用Transition就很难实现了，此时我们也需要这样的一个“关键帧”来控制。那么CSS3的Animation就是由“keyframes”这个属性来实现这样的效果。下面我们一起先来看看Keyframes: Keyframes具有其自己的语法规则，他的命名是由"@keyframes"开头，后面紧接着是这个“动画的名称”加上一对花括号“{}”，括号中就是一些不同时间段样式规则，有点像我们css的样式写法一样。对于一个"@keyframes"中的样式规则是由多个百分比构成的，如“0%”到"100%"之间，我们可以在这个规则中创建多个百分比，我们分别给每一个百分比中给需要有动画效果的元素加上不同的属性，从而让元素达到一种在不断变化的效果，比如说移动，改变元素颜色，位置，大小，形状等，不过有一点需要注意的是，我们可以使用“fromt”“to”来代表一个动画是从哪开始，到哪结束，也就是说这个 "from"就相当于"0%"而"to"相当于"100%",值得一说的是，其中"0%"不能像别的属性取值一样把百分比符号省略，我们在这里必须加上百分符号（“%”）如果没有加上的话，我们这个keyframes是无效的，不起任何作用。因为keyframes的单位只接受百分比值。[2] </p>
+    <h2>用户界面</h2>
+    <p>resize:可以由用户自己调整div的大小，有horizontal（水平）vertical（垂直）或者both（同时），或者同时调整。如果再加上max-width或min-width的话还可以防止破坏布局选择器CSS3增加了更多的CSS选择器，可以实现更简单但是更强大的功能，比如:nth-child()等。Attribute selectors:在属性中可以加入通配符，包括^,$,* [att^=val]:表示开始字符是val的att属性[att$=val]:表示结束字符是val的att属性[att*=val]:表示包含至少有一个val的att属性</p>
+    <h2>其它模块：</h2>
+    <p>（Other modules）</p>
+    <p>media queries:感觉叫媒体选择比较合适，可以为网页中不同的对象设置不同的浏览设备。比如可以为某一块分别设置屏幕浏览样式和手机浏览样式，以前则只能设置整个网页。</p>
+    <p>multi-column layout:多列布局，让文字以多列显示，包括column-width、column-count、column-gap三个值</p>
+    <p>CSS3浏览器适应情况</p>
+    <p>CSS3浏览器适应情况</p>
+    <p>column-width:指定每列宽度[4] </p>
+    <p>column-count:指定列数</p>
+    <p>column-gap:指定每列之间的间距</p>
+    <p>column-rule-color:控制列间的颜色</p>
+    <p>column-rule-style:控制列间的样式</p>
+    <p>column-rule-width:控制列间的宽度</p>
+    <p>column-space-distribution:平均分配列间距</p>
+</body>
