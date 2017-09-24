@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.454tangwenbin.com/"/>
-  <updated>2017-09-17T10:58:34.199Z</updated>
+  <updated>2017-09-24T00:48:36.179Z</updated>
   <id>http://www.454tangwenbin.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScrip指导原则</title>
+    <link href="http://www.454tangwenbin.com/2017/09/24/JavaScrip%E6%8C%87%E5%AF%BC%E5%8E%9F%E5%88%99/"/>
+    <id>http://www.454tangwenbin.com/2017/09/24/JavaScrip指导原则/</id>
+    <published>2017-09-24T00:53:59.000Z</published>
+    <updated>2017-09-24T00:48:36.179Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-与标准兼容"><a href="#1-与标准兼容" class="headerlink" title="1 与标准兼容"></a>1 与标准兼容</h2><p>面向未来开发应用程序，确保Web应用程序能在更新更好的浏览器中运行。</p>
+<h2 id="2-容易维护"><a href="#2-容易维护" class="headerlink" title="2 容易维护"></a>2 容易维护</h2><p>综合运用可重用和容易理解的方法，以便你和其他人能够集中关注业务逻辑，而不是反复重写代码。</p>
+<h2 id="3-具有可访问性"><a href="#3-具有可访问性" class="headerlink" title="3 具有可访问性"></a>3 具有可访问性</h2><p>确保每个人能简捷而有效地访问到你的信息，即使他们无法运行脚本或禁用了JavaScript。</p>
+<h2 id="4-具有可用性"><a href="#4-具有可用性" class="headerlink" title="4 具有可用性"></a>4 具有可用性</h2><p>那些在一种情况下非常有效但很难实现或重用的脚本，在第二次或第三次使用时不会有太大的价值。可用性不仅适用于与最终用户的交互，也适用于与开发者的交互。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-与标准兼容&quot;&gt;&lt;a href=&quot;#1-与标准兼容&quot; class=&quot;headerlink&quot; title=&quot;1 与标准兼容&quot;&gt;&lt;/a&gt;1 与标准兼容&lt;/h2&gt;&lt;p&gt;面向未来开发应用程序，确保Web应用程序能在更新更好的浏览器中运行。&lt;/p&gt;
+&lt;h2 id=&quot;2-容
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://www.454tangwenbin.com/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.454tangwenbin.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS3第十一集 服务器端字体</title>
@@ -462,67 +489,6 @@
   </entry>
   
   <entry>
-    <title>CSS3第二集 边框属性</title>
-    <link href="http://www.454tangwenbin.com/2017/09/17/CSS3%E7%AC%AC%E4%BA%8C%E9%9B%86%20%E8%BE%B9%E6%A1%86%E5%B1%9E%E6%80%A7/"/>
-    <id>http://www.454tangwenbin.com/2017/09/17/CSS3第二集 边框属性/</id>
-    <published>2017-09-17T10:36:59.000Z</published>
-    <updated>2017-09-17T10:42:22.789Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="边框属性"><a href="#边框属性" class="headerlink" title="边框属性"></a>边框属性</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>border-radius</td>
-<td>边框圆角</td>
-</tr>
-<tr>
-<td>border-image</td>
-<td>边框图片</td>
-</tr>
-</tbody>
-</table>
-<h2 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h2><p><a href="../../../../CSS3/CSS3第二集 边框属性.html">demo</a></p>
-<a id="more"></a>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">        /*</div><div class="line">        边框属性</div><div class="line">        |属性|说明|</div><div class="line">        |border-radius|边框圆角|</div><div class="line">        |border-image|边框图片|</div><div class="line">         */</div><div class="line"></div><div class="line">        .one &#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            border: 2px solid blue;</div><div class="line">            /*上、右、下、左*/</div><div class="line">            border-radius: 30px 60px 90px;</div><div class="line">        &#125;</div><div class="line">        .two &#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            border: 2px solid blue;</div><div class="line">            /*指定长短轴*/</div><div class="line">            border-radius: 30px 60px 90px/90px 60px 30px;</div><div class="line">        &#125;</div><div class="line">        .three &#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            -webkit-border-image: url(./img/border.png) 26/26px repeat;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"one"</span>&gt;</span>aaaaaaa<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"two"</span>&gt;</span>aaaaaaa<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"three"</span>&gt;</span>aaaaaaa<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;边框属性&quot;&gt;&lt;a href=&quot;#边框属性&quot; class=&quot;headerlink&quot; title=&quot;边框属性&quot;&gt;&lt;/a&gt;边框属性&lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;属性&lt;/th&gt;
-&lt;th&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;border-radius&lt;/td&gt;
-&lt;td&gt;边框圆角&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;border-image&lt;/td&gt;
-&lt;td&gt;边框图片&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&quot;代码演示&quot;&gt;&lt;a href=&quot;#代码演示&quot; class=&quot;headerlink&quot; title=&quot;代码演示&quot;&gt;&lt;/a&gt;代码演示&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;../../../../CSS3/CSS3第二集 边框属性.html&quot;&gt;demo&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="CSS3" scheme="http://www.454tangwenbin.com/categories/CSS3/"/>
-    
-    
-      <category term="CSS3" scheme="http://www.454tangwenbin.com/tags/CSS3/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CSS3第三集 背景属性</title>
     <link href="http://www.454tangwenbin.com/2017/09/17/CSS3%E7%AC%AC%E4%B8%89%E9%9B%86%20%E8%83%8C%E6%99%AF%E5%B1%9E%E6%80%A7/"/>
     <id>http://www.454tangwenbin.com/2017/09/17/CSS3第三集 背景属性/</id>
@@ -573,6 +539,67 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&quot;代码演示&quot;&gt;&lt;a href=&quot;#代码演示&quot; class=&quot;headerlink&quot; title=&quot;代码演示&quot;&gt;&lt;/a&gt;代码演示&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;../../../../CSS3/CSS3第三集 背景属性.html&quot;&gt;demo&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CSS3" scheme="http://www.454tangwenbin.com/categories/CSS3/"/>
+    
+    
+      <category term="CSS3" scheme="http://www.454tangwenbin.com/tags/CSS3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3第二集 边框属性</title>
+    <link href="http://www.454tangwenbin.com/2017/09/17/CSS3%E7%AC%AC%E4%BA%8C%E9%9B%86%20%E8%BE%B9%E6%A1%86%E5%B1%9E%E6%80%A7/"/>
+    <id>http://www.454tangwenbin.com/2017/09/17/CSS3第二集 边框属性/</id>
+    <published>2017-09-17T10:36:59.000Z</published>
+    <updated>2017-09-17T10:42:22.789Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="边框属性"><a href="#边框属性" class="headerlink" title="边框属性"></a>边框属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border-radius</td>
+<td>边框圆角</td>
+</tr>
+<tr>
+<td>border-image</td>
+<td>边框图片</td>
+</tr>
+</tbody>
+</table>
+<h2 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h2><p><a href="../../../../CSS3/CSS3第二集 边框属性.html">demo</a></p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">        /*</div><div class="line">        边框属性</div><div class="line">        |属性|说明|</div><div class="line">        |border-radius|边框圆角|</div><div class="line">        |border-image|边框图片|</div><div class="line">         */</div><div class="line"></div><div class="line">        .one &#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            border: 2px solid blue;</div><div class="line">            /*上、右、下、左*/</div><div class="line">            border-radius: 30px 60px 90px;</div><div class="line">        &#125;</div><div class="line">        .two &#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            border: 2px solid blue;</div><div class="line">            /*指定长短轴*/</div><div class="line">            border-radius: 30px 60px 90px/90px 60px 30px;</div><div class="line">        &#125;</div><div class="line">        .three &#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            -webkit-border-image: url(./img/border.png) 26/26px repeat;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"one"</span>&gt;</span>aaaaaaa<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"two"</span>&gt;</span>aaaaaaa<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"three"</span>&gt;</span>aaaaaaa<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;边框属性&quot;&gt;&lt;a href=&quot;#边框属性&quot; class=&quot;headerlink&quot; title=&quot;边框属性&quot;&gt;&lt;/a&gt;边框属性&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属性&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;border-radius&lt;/td&gt;
+&lt;td&gt;边框圆角&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;border-image&lt;/td&gt;
+&lt;td&gt;边框图片&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;代码演示&quot;&gt;&lt;a href=&quot;#代码演示&quot; class=&quot;headerlink&quot; title=&quot;代码演示&quot;&gt;&lt;/a&gt;代码演示&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;../../../../CSS3/CSS3第二集 边框属性.html&quot;&gt;demo&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1201,36 +1228,6 @@
     
     
       <category term="CSS3" scheme="http://www.454tangwenbin.com/tags/CSS3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决hexo部署时出现error deployer not found: git问题</title>
-    <link href="http://www.454tangwenbin.com/2017/07/15/%E8%A7%A3%E5%86%B3hexo%E9%83%A8%E7%BD%B2%E6%97%B6%E5%87%BA%E7%8E%B0error-deployer-not-found-git%E9%97%AE%E9%A2%98/"/>
-    <id>http://www.454tangwenbin.com/2017/07/15/解决hexo部署时出现error-deployer-not-found-git问题/</id>
-    <published>2017-07-15T11:51:54.000Z</published>
-    <updated>2017-07-16T02:25:27.289Z</updated>
-    
-    <content type="html"><![CDATA[<p>hexo搭建博客，运行:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-<p>部署至github时，出现error deployer not found: git，执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>后，重运行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-<p>即可解决问题。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;hexo搭建博客，运行:&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://www.454tangwenbin.com/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://www.454tangwenbin.com/tags/hexo/"/>
     
   </entry>
   
