@@ -276,6 +276,141 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.454tangwenbin.com/2017/10/15/JavaScrip实现DOM代码生成器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="454tangwenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="454tangwenbin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/15/JavaScrip实现DOM代码生成器/" itemprop="url">JavaScrip实现DOM代码生成器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-15T21:43:39+08:00">
+                2017-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-html代码"><a href="#1-html代码" class="headerlink" title="1 html代码"></a>1 html代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Generate DOM<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">""</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>DOM Generation<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"contents"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"generator"</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Source<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"source"</span>&gt;</span>Enter an HTML document fragment<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"source"</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"15"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"generate"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"&amp;#8585; generate &amp;#8585;"</span> /&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>DOM Code<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"result"</span>&gt;</span>Enter a DOM Fragment:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"result"</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"15"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!--ADS库：ads.js暂未引入--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../ads.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../generateDOM.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="2-javascript代码"><a href="#2-javascript代码" class="headerlink" title="2 javascript代码"></a>2 javascript代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> domCode = <span class="string">''</span>,</div><div class="line">        nodeNameCounters = [],</div><div class="line">        requiredVariables = <span class="string">''</span>,</div><div class="line">        newVariables = <span class="string">''</span>;</div><div class="line"></div><div class="line">    <span class="comment">//字符串编码，需要转义'\'，'''和'\n'</span></div><div class="line">    <span class="keyword">var</span> encode = <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!str) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">        str.replace(<span class="regexp">/\\/g</span>, <span class="string">'\\\\'</span>);</div><div class="line">        str.replace(<span class="regexp">/\'/g</span>, <span class="string">"\\'"</span>);</div><div class="line">        str.replace(<span class="regexp">/\s+^/mg</span>, <span class="string">'\\n'</span>);</div><div class="line"></div><div class="line">        <span class="keyword">return</span> str;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">//检查是否有$符号，确定是否为变量</span></div><div class="line">    <span class="keyword">var</span> checkForVariable = <span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (v.indexOf(<span class="string">'$'</span>) === <span class="number">-1</span>) &#123;</div><div class="line">            <span class="comment">//如果不是变量，返回带引号的字符串</span></div><div class="line">            v = <span class="string">"'"</span> + v + <span class="string">"'"</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">//如果是变量，返回从$至结尾处的子字符串</span></div><div class="line">            <span class="comment">//因MSIE会添加锚的全部路径</span></div><div class="line">            v = v.substring(v.indexOf(<span class="string">'$'</span>) + <span class="number">1</span>);</div><div class="line">            <span class="comment">//变量声明添加到requiredVariables字符串中，以便显示它们</span></div><div class="line">            requiredVariables += <span class="string">'var '</span> + v + <span class="string">';\n'</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> v;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">//核心方法generate()</span></div><div class="line">    <span class="keyword">var</span> generate = <span class="function"><span class="keyword">function</span> (<span class="params">strHTML, strRoot</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> node = <span class="literal">null</span>,</div><div class="line">            domRoot = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line"></div><div class="line">        <span class="comment">//将HTML代码添加到页面主体中，以便能遍历相应的DOM树</span></div><div class="line">        domRoot.innerHTML = strHTML;</div><div class="line"></div><div class="line">        <span class="comment">//重置变量</span></div><div class="line">        domCode = <span class="string">''</span>,</div><div class="line">        nodeNameCounters = [],</div><div class="line">        requiredVariables = <span class="string">''</span>,</div><div class="line">        newVariables = <span class="string">''</span>;</div><div class="line"></div><div class="line">        <span class="comment">//处理DOM树中所有子节点</span></div><div class="line">        node = domRoot.firstChild;</div><div class="line">        <span class="keyword">while</span> (node) &#123;</div><div class="line">            ADS.walkTheDomRecursive(processNode, node, <span class="number">0</span>, strRoot);</div><div class="line">            node = node.nextSibling;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//输出生成的代码</span></div><div class="line">        domCode = <span class="string">'/* requiredVariables in this code\n'</span> + requiredVariables + <span class="string">'*/\n\n'</span></div><div class="line">            + domCode + <span class="string">'\n\n'</span> </div><div class="line">            + <span class="string">'/* new objects in this code\n'</span> + newVariables + <span class="string">'*/\n\n'</span>;</div><div class="line">        <span class="keyword">return</span> domCode;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//processNode()方法</span></div><div class="line">    <span class="keyword">var</span> processNode = <span class="function"><span class="keyword">function</span> (<span class="params">tabCount, refParent</span>) </span>&#123;</div><div class="line">        <span class="comment">//根据DOM树层级重复制表符，</span></div><div class="line">        <span class="comment">//确定适当的缩进</span></div><div class="line">        <span class="keyword">var</span> tabs = (tabCount ? <span class="string">'\t'</span>.repeat(<span class="built_in">parseInt</span>(tabCount)) : <span class="string">''</span>),</div><div class="line">            ref = <span class="string">''</span>,</div><div class="line">            nodeName = <span class="keyword">this</span>.nodeName.toLowerCase(),</div><div class="line">            nodeValue = <span class="keyword">this</span>.nodeValue,</div><div class="line">            attributes = <span class="keyword">this</span>.attributes,</div><div class="line">            i = <span class="number">0</span>,</div><div class="line">            len = <span class="number">0</span>,</div><div class="line">            value = <span class="string">''</span>;</div><div class="line"></div><div class="line">        <span class="comment">//确定节点类型，并处理元素和文本节点</span></div><div class="line">        <span class="keyword">switch</span> (<span class="keyword">this</span>.nodeType) &#123;</div><div class="line">            <span class="keyword">case</span> ADS.node.ELEMENT_NODE:</div><div class="line">                <span class="comment">//处理元素节点</span></div><div class="line"></div><div class="line">                <span class="comment">//记录元素节点数，并根据节点索引创建变量</span></div><div class="line">                <span class="keyword">if</span> (nodeNameCounters[nodeName]) &#123;</div><div class="line">                    ++nodeNameCounters[nodeName];</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    nodeNameCounters[nodeName] = <span class="number">1</span>;</div><div class="line">                &#125;</div><div class="line">                ref = nodeName + nodeNameCounters[nodeName];</div><div class="line"></div><div class="line">                <span class="comment">//DOM创建代码</span></div><div class="line">                domCode += tabs + <span class="string">'var '</span> + ref + <span class="string">' = document.createElement(\''</span> + nodeName + <span class="string">'\');\n'</span>;</div><div class="line"></div><div class="line">                <span class="comment">//保存新变量，以便输出</span></div><div class="line">                newVariables += <span class="string">''</span> + ref + <span class="string">';\n'</span>;</div><div class="line"></div><div class="line">                <span class="comment">//如果元素存在属性，处理属性</span></div><div class="line">                <span class="keyword">if</span> (attributes) &#123;</div><div class="line">                    <span class="keyword">for</span> (i = <span class="number">0</span>, len = attributes.length; i &lt; len; i++) &#123;</div><div class="line">                        ADS.walkTheDomRecursive(processAttribute, attributes[i], tabCount, ref);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> ADS.node.TEXT_NODE:</div><div class="line">                <span class="comment">//处理文本节点</span></div><div class="line"></div><div class="line">                <span class="comment">//处理文本数据</span></div><div class="line">                value = (nodeValue ? encode(nodeValue.trim()) : <span class="string">''</span>);</div><div class="line"></div><div class="line">                <span class="keyword">if</span> (value) &#123;</div><div class="line">                    <span class="comment">//文本数据检查是不是$var格式的值</span></div><div class="line">                    value = checkForVariable(value);</div><div class="line"></div><div class="line">                    <span class="comment">//记录文本节点数，并根据节点索引创建变量</span></div><div class="line">                    <span class="keyword">if</span> (nodeNameCounters[<span class="string">'txt'</span>]) &#123;</div><div class="line">                        ++nodeNameCounters[<span class="string">'txt'</span>];</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        nodeNameCounters[<span class="string">'txt'</span>] = <span class="number">1</span>;</div><div class="line">                    &#125;</div><div class="line">                    ref = <span class="string">'txt'</span> + nodeNameCounters[<span class="string">'txt'</span>];</div><div class="line"></div><div class="line">                    <span class="comment">//DOM创建代码</span></div><div class="line">                    domCode += tabs + <span class="string">'var '</span> + ref + <span class="string">' = document.createTextNode('</span> + value + <span class="string">');\n'</span>;</div><div class="line"></div><div class="line">                    <span class="comment">//保存新变量，以便输出</span></div><div class="line">                    newVariables += <span class="string">''</span> + ref + <span class="string">'\n'</span>;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    <span class="comment">//如果为空或空格值则返回，即此节点不添加至父节点</span></div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span> :</div><div class="line">                <span class="comment">//其它类型忽略</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//添加这个节点至父节点</span></div><div class="line">        <span class="keyword">if</span> (refParent) &#123;</div><div class="line">            domCode += tabs + refParent + <span class="string">'.appendChild('</span> + ref + <span class="string">');\n'</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> ref;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">//processAttribute()方法</span></div><div class="line">    <span class="keyword">var</span> processAttribute = <span class="function"><span class="keyword">function</span> (<span class="params">tabCount, refParent</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> tabs = <span class="string">''</span>,</div><div class="line">            attrValue = <span class="keyword">this</span>.nodeValue,</div><div class="line">            attrName = <span class="keyword">this</span>.nodeName,</div><div class="line">            style = [],</div><div class="line">            pair = <span class="string">''</span>,</div><div class="line">            prop = [];</div><div class="line"></div><div class="line">        <span class="comment">//跳过文本节点</span></div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.nodeType !== ADS.node.ATTRIBUTE_NODE) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//获取属性值，如果无值则跳过</span></div><div class="line">        attrValue = (attrValue ? encode(attrValue.trim()) : <span class="string">''</span>);</div><div class="line">        <span class="keyword">if</span> (attrName === <span class="string">'cssText'</span>) &#123;</div><div class="line">            alert(<span class="literal">true</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (!attrValue) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">//确定缩进的层级</span></div><div class="line">        tabs = (tabCount ? <span class="string">'\t'</span>.repeat(<span class="built_in">parseInt</span>(tabCount)) : <span class="string">''</span>);</div><div class="line"></div><div class="line">        <span class="comment">//根据属性节点名作不同处理</span></div><div class="line">        <span class="keyword">switch</span> (attrName) &#123;</div><div class="line">            <span class="attr">default</span>:</div><div class="line">                <span class="comment">//默认情况</span></div><div class="line">                <span class="keyword">if</span> (attrName.substring(<span class="number">0</span>, <span class="number">2</span>) === <span class="string">'on'</span>) &#123;</div><div class="line">                    <span class="comment">//如果是事件属性，则定义一个函数</span></div><div class="line">                    domCode += tabs + refParent + <span class="string">'.'</span> + attrName + <span class="string">' = function () &#123; '</span> + attrValue + <span class="string">'&#125;\n'</span>;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    <span class="comment">//否则，设置属性值</span></div><div class="line">                    domCode += tabs + refParent + <span class="string">'.setAttrbute(\''</span> + attrName + <span class="string">'\', '</span> </div><div class="line">                            + checkForVariable(attrValue) + <span class="string">');\n'</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'class'</span>:</div><div class="line">                <span class="comment">//如果属性是class则用className代替</span></div><div class="line">                domCode += tabs + refParent + <span class="string">'.className = '</span> + checkForVariable(attrValue) + <span class="string">';\n'</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'style'</span>:</div><div class="line">                <span class="comment">//如果属性是style则用正则/\s*;\s*/分割</span></div><div class="line">                style = attrValue.split(<span class="regexp">/\s*;\s*/</span>);</div><div class="line"></div><div class="line">                <span class="keyword">if</span> (style) &#123;</div><div class="line">                    <span class="comment">//遍历style数组</span></div><div class="line">                    <span class="keyword">for</span> (pair <span class="keyword">in</span> style) &#123;</div><div class="line">                        <span class="comment">//跳过空样式对</span></div><div class="line">                        <span class="keyword">if</span> (!style[pair]) &#123;</div><div class="line">                            <span class="keyword">continue</span>;</div><div class="line">                        &#125;</div><div class="line">                        <span class="comment">//用/\s*;\s*/分割样式对，并跳过空样式值</span></div><div class="line">                        prop = style[pair].split(<span class="regexp">/\s*:\s*/</span>);</div><div class="line">                        <span class="keyword">if</span> (!prop[<span class="number">1</span>]) &#123;</div><div class="line">                            <span class="keyword">continue</span>;</div><div class="line">                        &#125;</div><div class="line">                        <span class="comment">//样式名转化为驼峰式</span></div><div class="line">                        prop[<span class="number">0</span>] = ADS.camelize(prop[<span class="number">0</span>]);</div><div class="line">                        <span class="comment">//样式值检查是否为$var形式</span></div><div class="line">                        prop[<span class="number">1</span>] = checkForVariable(prop[<span class="number">1</span>]);</div><div class="line"></div><div class="line">                        <span class="comment">//设置domCode</span></div><div class="line">                        <span class="keyword">if</span> (prop[<span class="number">0</span>] === <span class="string">'float'</span>) &#123;</div><div class="line">                            <span class="comment">//特殊样式float处理，标准用cssFloat代替，IE用styleFloat代替</span></div><div class="line">                            domCode += tabs + refParent + <span class="string">'.style.cssFloat = '</span> + prop[<span class="number">1</span>] + <span class="string">';\n'</span>;</div><div class="line">                            domCode += tabs + refParent + <span class="string">'.style.styleFloat = '</span> + prop[<span class="number">1</span>] + <span class="string">';\n'</span>;</div><div class="line">                        &#125; <span class="keyword">else</span> &#123;</div><div class="line">                            <span class="comment">//一般样式处理</span></div><div class="line">                            domCode += tabs + refParent + <span class="string">'.style.'</span> + prop[<span class="number">0</span>] + <span class="string">' = '</span> + prop[<span class="number">1</span>] + <span class="string">';\n'</span>;</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">/*</span></div><div class="line">     *加载DOM Code生成器</div><div class="line">    */</div><div class="line">    ADS.addEvent(<span class="built_in">window</span>, <span class="string">'load'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">//生成按钮注册click事件</span></div><div class="line">        ADS.addEvent(<span class="string">'generate'</span>, <span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">W3CEvent</span>) </span>&#123;</div><div class="line">            <span class="comment">//获取HTML片段源代码</span></div><div class="line">            <span class="keyword">var</span> source = ADS.$(<span class="string">'source'</span>).value;</div><div class="line"></div><div class="line">            <span class="comment">//转化为DOM Code</span></div><div class="line">            ADS.$(<span class="string">'result'</span>).value = generate(source, <span class="string">'document.body'</span>);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.454tangwenbin.com/2017/10/02/JavaScrip实现调试器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -295,7 +430,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/02/JavaScrip实现调试器/" itemprop="url">JavaScrip指导原则</a></h1>
+                <a class="post-title-link" href="/2017/10/02/JavaScrip实现调试器/" itemprop="url">JavaScrip实现调试器</a></h1>
         
 
         <div class="post-meta">
@@ -366,7 +501,7 @@
       
         
           
-            <h2 id="1-myLogger"><a href="#1-myLogger" class="headerlink" title="1 myLogger"></a>1 myLogger</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//ADS命名空间</span></div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.ADS) &#123;</div><div class="line">        <span class="built_in">window</span>[<span class="string">'ADS'</span>] = &#123;&#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//myLogger类</span></div><div class="line">    <span class="keyword">var</span> myLogger = <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</div><div class="line">        <span class="comment">//私有变量：引用日志窗口</span></div><div class="line">        <span class="keyword">var</span> logWindow = <span class="literal">null</span>;</div><div class="line">        <span class="comment">//私有方法：建立日志窗口</span></div><div class="line">        <span class="keyword">var</span> createWindow = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">//获取日志窗口左上角位置</span></div><div class="line">            <span class="keyword">var</span> browserWindowSize = ADS.getBrowserWindowSize(),</div><div class="line">                left = (browserWindowSize.width - <span class="number">200</span>) / <span class="number">2</span>,</div><div class="line">                top = (browserWindowSize.height - <span class="number">200</span>) / <span class="number">2</span>;</div><div class="line"></div><div class="line">            <span class="comment">//创建日志窗口的DOM节点，并用logWindow维护引用</span></div><div class="line">            logWindow = <span class="built_in">document</span>.createElement(<span class="string">'ul'</span>);</div><div class="line"></div><div class="line">            <span class="comment">//设置日志窗口id，必要时识别logWindow</span></div><div class="line">            logWindow.setAttribute(<span class="string">'id'</span>, id);</div><div class="line"></div><div class="line">            <span class="comment">//日志窗口居中放置</span></div><div class="line">            logWindow.style.position = <span class="string">'absolute'</span>;</div><div class="line">            logWindow.style.left = left + <span class="string">'px'</span>;</div><div class="line">            logWindow.style.top = top + <span class="string">'px'</span>;</div><div class="line"></div><div class="line">            <span class="comment">//日志窗口大小设置</span></div><div class="line">            logWindow.style.width = <span class="string">'200px'</span>;</div><div class="line">            logWindow.style.height = <span class="string">'200px'</span>;</div><div class="line">            logWindow.style.overflow = <span class="string">'scroll'</span>;</div><div class="line"></div><div class="line">            <span class="comment">//日志窗口样式设置</span></div><div class="line">            logWindow.style.margin = <span class="string">'0'</span>;</div><div class="line">            logWindow.style.padding = <span class="string">'0'</span>;</div><div class="line">            logWindow.style.border = <span class="string">'1px solid #000'</span>;</div><div class="line">            logWindow.style.bacgroundColor = <span class="string">'white'</span>;</div><div class="line">            logWindow.style.listStyle = <span class="string">'none'</span>;</div><div class="line">            logWindow.style.font = <span class="string">'10px/10px Verdana, Tahoma, Sans'</span>;</div><div class="line"></div><div class="line">            <span class="comment">//日志窗口插入DOM</span></div><div class="line">            <span class="built_in">document</span>.body.appendChild(logWindow);</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="comment">//id默认值为ADSLogWindow</span></div><div class="line">        id = id || <span class="string">'ADSLogWindow'</span>;</div><div class="line"></div><div class="line">        <span class="comment">//特权方法：输出日志条目</span></div><div class="line">        <span class="keyword">this</span>.writeRaw = <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> li = <span class="literal">null</span>;</div><div class="line"></div><div class="line">            <span class="comment">//如果没有日志窗口，创建它</span></div><div class="line">            <span class="keyword">if</span> (!logWindow) &#123;</div><div class="line">                createWindow();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//创建日志条目并设置样式</span></div><div class="line">            li = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</div><div class="line">            li.style.margin = <span class="string">'0'</span>;</div><div class="line">            li.style.padding = <span class="string">'2px'</span>;</div><div class="line">            li.style.border = <span class="string">'0'</span>;</div><div class="line">            li.style.borderBottom = <span class="string">'1px dotted #000'</span>;</div><div class="line">            li.style.color = <span class="string">'#000'</span>;</div><div class="line">            logWindow.style.font = <span class="string">'9px/9px Verdana, Tahoma, Sans'</span>;</div><div class="line"></div><div class="line">            <span class="comment">//日志条目添加信息</span></div><div class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> message === <span class="string">'undefined'</span>) &#123;</div><div class="line">                li.appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">'Message was undefined'</span>));</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> li.innerHTML !== <span class="string">'undefined'</span>) &#123;</div><div class="line">                li.innerHTML = message;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                li.appendChild(<span class="built_in">document</span>.createTextNode(message));</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//日志条目添加入日志窗口</span></div><div class="line">            logWindow.appendChild(li);</div><div class="line"></div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    myLogger.prototype = &#123;</div><div class="line">        <span class="attr">write</span>: <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</div><div class="line">            <span class="comment">//检测message是否为空</span></div><div class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> message === <span class="string">'undefined'</span> || message.length === <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(<span class="string">'ADS Log: null message!'</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//检测message是否有toString方法，如果没有返回类型</span></div><div class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> message !== <span class="string">'string'</span>) &#123;</div><div class="line">                 <span class="keyword">if</span>(message.toString) &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(message.toString());</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(<span class="keyword">typeof</span> message);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//替代&lt;和&gt;</span></div><div class="line">            message.replace(<span class="string">'/&lt;/g'</span>, <span class="string">'&amp;lt;'</span>).replace(<span class="string">'/&gt;/g'</span>, <span class="string">'&amp;gt;'</span>);</div><div class="line"></div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(message);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">header</span>: <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</div><div class="line">            message = <span class="string">'&lt;span style="padding: 0 5px; color: white; background-color: #000; font: bold;"&gt;'</span> + message + <span class="string">'&lt;/span&gt;'</span>;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(message);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="built_in">window</span>[<span class="string">'ADS'</span>][<span class="string">'log'</span>] = <span class="keyword">new</span> myLogger();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+            <h2 id="1-myLogger"><a href="#1-myLogger" class="headerlink" title="1 myLogger"></a>1 myLogger</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//ADS命名空间</span></div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.ADS) &#123;</div><div class="line">        <span class="built_in">window</span>[<span class="string">'ADS'</span>] = &#123;&#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//myLogger类</span></div><div class="line">    <span class="keyword">var</span> myLogger = <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</div><div class="line">        <span class="comment">//id默认值为ADSLogWindow</span></div><div class="line">        id = id || <span class="string">'ADSLogWindow'</span>;</div><div class="line"></div><div class="line">        <span class="comment">//私有变量：引用日志窗口</span></div><div class="line">        <span class="keyword">var</span> logWindow = <span class="literal">null</span>;</div><div class="line">        <span class="comment">//私有方法：建立日志窗口</span></div><div class="line">        <span class="keyword">var</span> createWindow = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">//获取日志窗口左上角位置</span></div><div class="line">            <span class="keyword">var</span> browserWindowSize = ADS.getBrowserWindowSize(),</div><div class="line">                left = (browserWindowSize.width - <span class="number">200</span>) / <span class="number">2</span>,</div><div class="line">                top = (browserWindowSize.height - <span class="number">200</span>) / <span class="number">2</span>;</div><div class="line"></div><div class="line">            <span class="comment">//创建日志窗口的DOM节点，并用logWindow维护引用</span></div><div class="line">            logWindow = <span class="built_in">document</span>.createElement(<span class="string">'ul'</span>);</div><div class="line"></div><div class="line">            <span class="comment">//设置日志窗口id，必要时识别logWindow</span></div><div class="line">            logWindow.setAttribute(<span class="string">'id'</span>, id);</div><div class="line"></div><div class="line">            <span class="comment">//日志窗口居中放置</span></div><div class="line">            logWindow.style.position = <span class="string">'absolute'</span>;</div><div class="line">            logWindow.style.left = left + <span class="string">'px'</span>;</div><div class="line">            logWindow.style.top = top + <span class="string">'px'</span>;</div><div class="line"></div><div class="line">            <span class="comment">//日志窗口大小设置</span></div><div class="line">            logWindow.style.width = <span class="string">'200px'</span>;</div><div class="line">            logWindow.style.height = <span class="string">'200px'</span>;</div><div class="line">            logWindow.style.overflow = <span class="string">'scroll'</span>;</div><div class="line"></div><div class="line">            <span class="comment">//日志窗口样式设置</span></div><div class="line">            logWindow.style.margin = <span class="string">'0'</span>;</div><div class="line">            logWindow.style.padding = <span class="string">'0'</span>;</div><div class="line">            logWindow.style.border = <span class="string">'1px solid #000'</span>;</div><div class="line">            logWindow.style.bacgroundColor = <span class="string">'white'</span>;</div><div class="line">            logWindow.style.listStyle = <span class="string">'none'</span>;</div><div class="line">            logWindow.style.font = <span class="string">'10px/10px Verdana, Tahoma, Sans'</span>;</div><div class="line"></div><div class="line">            <span class="comment">//日志窗口插入DOM</span></div><div class="line">            <span class="built_in">document</span>.body.appendChild(logWindow);</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="comment">//特权方法：输出日志条目</span></div><div class="line">        <span class="keyword">this</span>.writeRaw = <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> li = <span class="literal">null</span>;</div><div class="line"></div><div class="line">            <span class="comment">//如果没有日志窗口，创建它</span></div><div class="line">            <span class="keyword">if</span> (!logWindow) &#123;</div><div class="line">                createWindow();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//创建日志条目并设置样式</span></div><div class="line">            li = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</div><div class="line">            li.style.margin = <span class="string">'0'</span>;</div><div class="line">            li.style.padding = <span class="string">'2px'</span>;</div><div class="line">            li.style.border = <span class="string">'0'</span>;</div><div class="line">            li.style.borderBottom = <span class="string">'1px dotted #000'</span>;</div><div class="line">            li.style.color = <span class="string">'#000'</span>;</div><div class="line">            logWindow.style.font = <span class="string">'9px/9px Verdana, Tahoma, Sans'</span>;</div><div class="line"></div><div class="line">            <span class="comment">//日志条目添加信息</span></div><div class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> message === <span class="string">'undefined'</span>) &#123;</div><div class="line">                li.appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">'Message was undefined'</span>));</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> li.innerHTML !== <span class="string">'undefined'</span>) &#123;</div><div class="line">                li.innerHTML = message;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                li.appendChild(<span class="built_in">document</span>.createTextNode(message));</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//日志条目添加入日志窗口</span></div><div class="line">            logWindow.appendChild(li);</div><div class="line"></div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    myLogger.prototype = &#123;</div><div class="line">        <span class="attr">write</span>: <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</div><div class="line">            <span class="comment">//检测message是否为空</span></div><div class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> message === <span class="string">'undefined'</span> || message.length === <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(<span class="string">'ADS Log: null message!'</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//检测message是否有toString方法，如果没有返回类型</span></div><div class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> message !== <span class="string">'string'</span>) &#123;</div><div class="line">                 <span class="keyword">if</span>(message.toString) &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(message.toString());</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(<span class="keyword">typeof</span> message);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//替代&lt;和&gt;</span></div><div class="line">            message.replace(<span class="string">'/&lt;/g'</span>, <span class="string">'&amp;lt;'</span>).replace(<span class="string">'/&gt;/g'</span>, <span class="string">'&amp;gt;'</span>);</div><div class="line"></div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(message);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">header</span>: <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</div><div class="line">            message = <span class="string">'&lt;span style="padding: 0 5px; color: white; background-color: #000; font: bold;"&gt;'</span> + message + <span class="string">'&lt;/span&gt;'</span>;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.writeRaw(message);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="built_in">window</span>[<span class="string">'ADS'</span>][<span class="string">'log'</span>] = <span class="keyword">new</span> myLogger();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
 
           
         
@@ -1605,166 +1740,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.454tangwenbin.com/2017/09/17/CSS3第四集 文本属性/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="454tangwenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="454tangwenbin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/17/CSS3第四集 文本属性/" itemprop="url">CSS3第四集 文本属性</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T18:46:59+08:00">
-                2017-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS3/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS3</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>text-shadow</td>
-<td>文本阴影</td>
-</tr>
-<tr>
-<td>box-shadow</td>
-<td>盒子阴影</td>
-</tr>
-<tr>
-<td>word-wrap</td>
-<td>强制单词换行</td>
-</tr>
-</tbody>
-</table>
-<h2 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h2><p><a href="../../../../CSS3/CSS3第四集 文本属性.html">demo</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/17/CSS3第四集 文本属性/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1815,7 +1790,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
