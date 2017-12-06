@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>动画水平伸展的菜单</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        ul {
+            list-style: none;
+            height: 50px;
+            padding-left: 20px;
+            border-bottom: 5px solid #f60;
+        }
+        li {
+            float: left;
+            margin-top: 20px;
+        }
+        a {
+            display: block;
+            width: 120px;
+            height: 30px;
+            margin-bottom: 1px;
+            line-height: 30px;
+            background-color: #ccc;
+            text-align: center;
+            text-decoration: none;
+
+            /*CSS3过渡属性实现水平伸展*/
+            -moz-transition: width 150ms linear;
+            -webkit-transition: width 150ms linear;
+            -o-transition: width 150ms linear;
+            -ms-transition: width 150ms linear;
+            transition: width 150ms linear;
+        }
+        a.active, a:hover {
+            color: #fff;
+            background-color: #f60;
+        }
+        a:hover {
+            width: 160px;
+
+            /*CSS3过渡属性实现水平伸展*/
+            -moz-transition: width 150ms linear;
+            -webkit-transition: width 150ms linear;
+            -o-transition: width 150ms linear;
+            -ms-transition: width 150ms linear;
+            transition: width 150ms linear;
+        }
+    </style>
+  </head>
+  <body>
+    <ul>
+        <li><a class="active" href="#">首　　页</a></li>
+        <li><a href="#">新闻快讯</a></li>
+        <li><a href="#">产品展示</a></li>
+        <li><a href="#">售后服务</a></li>
+        <li><a href="#">联系我们</a></li>
+    </ul>
+
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!--JQ实现水平伸展
+    <script>
+        $(function () {
+            $('a').hover(function () {
+                $(this).stop().animate({
+                    width: '160px'
+                }, 30);
+            }, function () {
+                $(this).stop().animate({
+                    width: '120px'
+                }, 30);
+            });
+        });
+    </script>
+    -->
+    <!--JS实现水平伸展
+    <script>
+        (function () {
+            var links = document.getElementsByTagName('a'),
+                i = 0,
+                len = links.length;
+
+            for (i = 0; i < len; i++) {
+                //缓存元素对象
+                var link = links[i];
+
+                //注册mouseover事件，鼠标移入元素宽度增加
+                link.onmouseover = function () {
+                    var that = this,
+
+                        //函数用来增加宽度
+                        increaseWidth = function () {
+                            //获取当前元素宽度
+                            var width = that.offsetWidth;
+
+                            //如果宽度大于160px，则停止动画
+                            if (width >= 160) {
+                                clearInterval(that.timer);
+                                return;
+                            }
+                            that.style.width = width + 8 + 'px';
+
+                            //定时器递归调用，实现动画
+                            that.timer = setTimeout(increaseWidth, 30);
+                        };
+
+                    //动画开始前清空动画队列
+                    clearTimeout(that.timer);
+
+                    //动画开始
+                    that.timer = setTimeout(increaseWidth, 30);
+                }
+                //注册mouseout事件，鼠标移出元素宽度恢复
+                link.onmouseout = function () {
+                    var that = this,
+
+                        //函数用来恢复宽度
+                        reduceWidth = function () {
+                            //获取当前元素宽度
+                            var width = that.offsetWidth;
+
+                            //如果宽度小于120px，则停止动画
+                            if (width <= 120) {
+                                clearTimeout(that.timer);
+                                return;
+                            }
+                            that.style.width = width - 8 + 'px';
+
+                            //定时器递归调用，实现动画
+                            that.timer = setTimeout(reduceWidth, 30);
+                        };
+
+                    //动画开始前清空动画队列
+                    clearTimeout(that.timer);
+
+                    //动画开始
+                    that.timer = setTimeout(reduceWidth, 30);
+                }
+            }
+        })();
+    </script>
+    -->
+  </body>
+</html>
