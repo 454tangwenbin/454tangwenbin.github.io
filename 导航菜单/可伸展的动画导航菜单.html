@@ -33,11 +33,10 @@
             text-decoration: none;
 
             /*CSS3过渡属性实现水平伸展*/
+            transition: width 150ms linear;
             -moz-transition: width 150ms linear;
             -webkit-transition: width 150ms linear;
             -o-transition: width 150ms linear;
-            -ms-transition: width 150ms linear;
-            transition: width 150ms linear;
         }
         a.active, a:hover {
             color: #fff;
@@ -45,13 +44,6 @@
         }
         a:hover {
             width: 160px;
-
-            /*CSS3过渡属性实现水平伸展*/
-            -moz-transition: width 150ms linear;
-            -webkit-transition: width 150ms linear;
-            -o-transition: width 150ms linear;
-            -ms-transition: width 150ms linear;
-            transition: width 150ms linear;
         }
     </style>
   </head>
@@ -64,7 +56,7 @@
         <li><a href="#">联系我们</a></li>
     </ul>
 
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
     <!--JQ实现水平伸展
     <script>
         $(function () {
